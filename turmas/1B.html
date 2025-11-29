@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turma 1B</title>
+    <link rel="stylesheet" href="watermark.css" />
+    <script src="watermark.js" defer></script>
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <script src="https://unpkg.com/docx@8.4.0/build/index.umd.js"></script>
+</head>
+
+<body>
+    <div class="class-container">
+        <div class="class-header">
+            <h1 class="class-title">Turma 1B</h1>
+            <div class="action-buttons">
+                <a href="../selecionar.html" class="btn-secondary">← Voltar</a>
+                <button id="sortBtn" class="btn-secondary btn-sort">Ordenar A-Z</button>
+                <button id="generateBtn" class="btn-secondary btn-generate">Gerar DOCX</button>
+            </div>
+        </div>
+        <div class="students-table-container">
+            <table class="students-table">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Deficiência</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

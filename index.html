@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Sistema Escolar Moderno</title>
+
+    <link rel="stylesheet" href="modern-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body class="login-page">
+    <!-- Background animado -->
+    <div class="animated-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Container de Login -->
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Logo e Título -->
+            <div class="login-header">
+                <div class="logo-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h1 class="login-title">Sistema Escolar</h1>
+                <p class="login-subtitle">Acesse sua conta para continuar</p>
+            </div>
+
+            <!-- Formulário -->
+            <form class="login-form" onsubmit="return handleLogin(event)">
+                <div class="form-group">
+                    <label for="username" class="form-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        Usuário
+                    </label>
+                    <input type="text" id="username" class="form-input" placeholder="Digite seu usuário" autocomplete="username" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        Senha
+                    </label>
+                    <input type="password" id="password" class="form-input" placeholder="Digite sua senha" autocomplete="current-password" required />
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember">
+                        <span>Lembrar-me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="login-button">
+                    <span>Entrar</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <div class="error-message" id="error"></div>
+            </form>
+
+            <!-- Informações de demo -->
+            <div class="demo-info">
+                <p>👤 Usuário: <strong>admin</strong></p>
+                <p>🔑 Senha: <strong>1234</strong></p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Nansinyx26" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://bit.ly/46QNGZv" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="mailto:oliversinyxcontato@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <p>&copy; 2026 Renan de Oliveira. Desenvolvido com tecnologias avançadas e muito ❤️</p>
+
+            <!-- MARCA D'ÁGUA -->
+            <a href="https://nansinyx26.github.io/Portifolio-2026-Renan-Farias/" target="_blank" rel="noopener noreferrer" class="nandev-watermark">
+
+                <div class="holographic-overlay"></div>
+                <div class="geometric-particles" id="particles"></div>
+
+                <div class="cube-container">
+                    <div class="wireframe-cube">
+                        <div class="cube-face front">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-1"></div>
+                                <div class="inner-line horizontal-line line-2"></div>
+                                <div class="inner-line horizontal-line line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face back">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-1"></div>
+                                <div class="inner-line vertical-line v-line-2"></div>
+                                <div class="inner-line vertical-line v-line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face right">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-1"></div>
+                                <div class="inner-line horizontal-line line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face left">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-1"></div>
+                                <div class="inner-line vertical-line v-line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face top">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-2"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face bottom">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="watermark-text">
+                Desenvolvido por <span class="watermark-highlight">Nan Dev</span>
+                </span>
+
+                <span class="code-symbol">&lt;/&gt;</span>
+            </a>
+        </div>
+    </footer>
+
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorDiv = document.getElementById('error');
+
+            if (username === 'admin' && password === '1234') {
+                localStorage.setItem('loggedIn', 'true');
+
+                // Animação de sucesso
+                const button = event.target.querySelector('.login-button');
+                button.innerHTML = '<span>✓ Sucesso!</span>';
+                button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+
+                setTimeout(() => {
+                    window.location.href = 'selecionar.html';
+                }, 800);
+            } else {
+                errorDiv.textContent = '❌ Usuário ou senha incorretos';
+                errorDiv.style.display = 'block';
+
+                // Shake animation
+                const card = document.querySelector('.login-card');
+                card.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    card.style.animation = '';
+                }, 500);
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

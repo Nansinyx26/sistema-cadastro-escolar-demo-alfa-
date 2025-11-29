@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 Gráficos de Evolução - Sistema de Alunos</title>
+    <link rel="stylesheet" href="graficos.css" />
+
+</head>
+
+<body>
+    <button class="back-btn" onclick="goBack()">← Voltar</button>
+
+
+    <div class="container">
+        <div class="header">
+            <h1>📊 Gráficos de Evolução</h1>
+            <p>Análise detalhada do desempenho dos alunos por matéria</p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label class="control-label" for="classSelect">🏫 Turma</label>
+                <select id="classSelect" onchange="loadStudents()">
+            <option value="">Selecione uma turma</option>
+        </select>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="studentSelect">👤 Aluno</label>
+                <select id="studentSelect" onchange="loadStudentData()">
+            <option value="">Selecione um aluno</option>
+        </select>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="subjectSelect">📚 Matéria (Filtro)</label>
+                <select id="subjectSelect" onchange="updateCharts()">
+            <option value="">Todas as matérias</option>
+            <option value="matematica">🔢 Matemática</option>
+            <option value="portugues">📝 Português</option>
+            <option value="geografia">🗺️ Geografia</option>
+            <option value="historia">📜 História</option>
+            <option value="ciencias">🔬 Ciências</option>
+            <option value="ingles">🇺🇸 Inglês</option>
+            <option value="educacao_fisica">⚽ Educação Física</option>
+        </select>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="generateCharts()" id="generateBtn" disabled>
+                    📈 Gerar Gráficos
+                </button>
+            <button class="btn btn-secondary" onclick="exportCharts()" id="exportBtn" disabled>
+                    📄 Exportar Relatório
+                </button>
+        </div>
+    </div>
+
+    <div id="studentInfo"></div>
+    <div id="chartsContainer" class="charts-container"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Nansinyx26" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://bit.ly/46QNGZv" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="mailto:oliversinyxcontato@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <p>&copy; 2026 Renan de Oliveira. Desenvolvido com tecnologias avançadas e muito ❤️</p>
+
+            <!-- MARCA D'ÁGUA -->
+            <a href="https://nansinyx26.github.io/Portifolio-2026-Renan-Farias/" target="_blank" rel="noopener noreferrer" class="nandev-watermark">
+
+                <div class="holographic-overlay"></div>
+                <div class="geometric-particles" id="particles"></div>
+
+                <div class="cube-container">
+                    <div class="wireframe-cube">
+                        <div class="cube-face front">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-1"></div>
+                                <div class="inner-line horizontal-line line-2"></div>
+                                <div class="inner-line horizontal-line line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face back">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-1"></div>
+                                <div class="inner-line vertical-line v-line-2"></div>
+                                <div class="inner-line vertical-line v-line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face right">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-1"></div>
+                                <div class="inner-line horizontal-line line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face left">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-1"></div>
+                                <div class="inner-line vertical-line v-line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face top">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-2"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face bottom">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="watermark-text">
+                Desenvolvido por <span class="watermark-highlight">Nan Dev</span>
+                </span>
+
+                <span class="code-symbol">&lt;/&gt;</span>
+            </a>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <script src="graficos.js"></script>
+
+</body>
+
+</html>

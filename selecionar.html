@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Selecionar Turma - Sistema Escolar</title>
+    <link rel="stylesheet" href="morden-selecionar.css" />
+</head>
+
+<body class="selecionar-page">
+
+    <div class="main-container">
+        <!-- Header da Página -->
+        <div class="page-header">
+            <h1 class="page-title">🎓 Sistema de Gestão Escolar</h1>
+            <p class="page-subtitle">Selecione uma opção para continuar</p>
+        </div>
+
+        <!-- Seção da Direção -->
+        <div class="direction-section">
+            <span class="direction-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                </svg>
+                Área Administrativa
+            </span>
+
+            <a href="direcao/direcao.html" class="direction-btn">
+
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 3v18h18"/>
+                    <path d="M18 17V9"/>
+                    <path d="M13 17V5"/>
+                    <path d="M8 17v-3"/>
+                </svg>
+                <span>Painel da Direção</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Divisor -->
+        <div class="section-divider"></div>
+
+        <!-- Seção das Turmas -->
+        <div class="classes-section">
+            <div class="classes-header">
+                <h2 class="classes-title">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg> Turmas Disponíveis
+                </h2>
+            </div>
+
+            <div class="classes-grid" id="classesGrid">
+                <!-- As turmas serão geradas dinamicamente -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Nansinyx26" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://bit.ly/46QNGZv" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="mailto:oliversinyxcontato@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <p>&copy; 2026 Renan de Oliveira. Desenvolvido com tecnologias avançadas e muito ❤️</p>
+
+            <!-- MARCA D'ÁGUA -->
+            <a href="https://nansinyx26.github.io/Portifolio-2026-Renan-Farias/" target="_blank" rel="noopener noreferrer" class="nandev-watermark">
+
+                <div class="holographic-overlay"></div>
+                <div class="geometric-particles" id="particles"></div>
+
+                <div class="cube-container">
+                    <div class="wireframe-cube">
+                        <div class="cube-face front">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-1"></div>
+                                <div class="inner-line horizontal-line line-2"></div>
+                                <div class="inner-line horizontal-line line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face back">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-1"></div>
+                                <div class="inner-line vertical-line v-line-2"></div>
+                                <div class="inner-line vertical-line v-line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face right">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-1"></div>
+                                <div class="inner-line horizontal-line line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face left">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-1"></div>
+                                <div class="inner-line vertical-line v-line-3"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face top">
+                            <div class="wireframe-lines">
+                                <div class="inner-line horizontal-line line-2"></div>
+                            </div>
+                        </div>
+
+                        <div class="cube-face bottom">
+                            <div class="wireframe-lines">
+                                <div class="inner-line vertical-line v-line-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="watermark-text">
+                Desenvolvido por <span class="watermark-highlight">Nan Dev</span>
+                </span>
+
+                <span class="code-symbol">&lt;/&gt;</span>
+            </a>
+        </div>
+    </footer>
+
+
+    <script>
+        // Gerar turmas dinamicamente (ADAPTADO PARA turmas/1A.html, 1B.html...)
+        const classesGrid = document.getElementById('classesGrid');
+        const anos = [1, 2, 3, 4, 5];
+        const letras = ['A', 'B', 'C', 'D'];
+        let delay = 0;
+
+        anos.forEach(ano => {
+            letras.forEach(letra => {
+                const card = document.createElement('a');
+
+                // ✅ LINK AJUSTADO PARA O FORMATO CORRETO
+                card.href = `turmas/${ano}${letra}.html`;
+
+                card.className = 'class-card';
+                card.style.animationDelay = `${delay * 0.05}s`;
+
+                card.innerHTML = `
+                    <div class="class-label">Turma</div>
+                    <div class="class-name">${ano}${letra}</div>
+                `;
+
+                // Efeito hover
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-8px) scale(1.05)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+
+                classesGrid.appendChild(card);
+                delay++;
+            });
+        });
+
+        // Animação de entrada
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.class-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.animation = 'fadeInUp 0.5s ease-out both';
+                }, index * 50);
+            });
+        });
+
+        // Easter egg: Konami Code
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
+
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            konamiCode = konamiCode.slice(-8);
+
+            if (konamiCode.join('') === konamiSequence.join('')) {
+                document.body.style.animation = 'rainbow 2s linear infinite';
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                }, 2000);
+            }
+        });
+    </script>
+
+    <style>
+        @keyframes rainbow {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</body>
+
+</html>
