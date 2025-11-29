@@ -69,13 +69,7 @@ cd sistema-gestao-escolar
 
 Abra no navegador
 
-bash# Abra o arquivo index.html diretamente
-# Ou use um servidor local (recomendado):
-python -m http.server 8000
-# Acesse: http://localhost:8000
-
-Login
-
+LogiN
 
 Usuário: admin
 Senha: 1234
@@ -296,4 +290,5 @@ Versão 3.0 (Planejado)
  Sistema de mensagens
  Módulo de frequência
  Impressão de boletins
+
 
